@@ -1,0 +1,56 @@
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Header from './componets/Header';
+import './App.css';
+import About from './pages/About.jsx';
+import Admin from './pages/Admin';
+import Blog from './pages/Blog';
+import Contact from './pages/Contact';
+import Courses from './pages/Courses';
+import Course from './componets/Course.jsx';
+import Home from './pages/Home';
+import Test from './pages/Test';
+import Footer from './componets/Footer';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Header />
+      <div className="main-container">
+        <Switch>
+
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/courses/:id">
+            <Course />
+          </Route>
+          <Route path="/courses" exact>
+            
+          </Route>
+
+          <Route path="/blog" exact>
+            <Blog />
+          </Route>
+
+          <Route path="/contact" exact>
+            <Contact />
+          </Route>
+
+          <Route path="/about" exact>
+            <About />
+          </Route>
+
+          <Route path="/admin">
+            <Admin />
+          </Route>
+          <Route path="/test">
+            <Test />
+          </Route>
+        </Switch>
+      </div>
+      <Footer />
+    </BrowserRouter>
+  );
+}
+
+export default App;
