@@ -39,7 +39,6 @@ const Header = () => {
               
             </NavDropdown>
             {/* <Nav.Link href="/blog">Notas</Nav.Link> */}
-            <Nav.Link href="/contact">Contacto</Nav.Link>
             <Nav.Link href="/about">Conocenos</Nav.Link>
           </Nav>
           <Nav>
@@ -47,7 +46,7 @@ const Header = () => {
               <i class="fab fa-linkedin fa-2x"></i>
             </Nav.Link>
 
-            <Nav.Link href="">
+            <Nav.Link href="https://www.instagram.com/cabincrew.formacion/" target="_blank">
               <i class="fab fa-instagram-square fa-2x"></i>
             </Nav.Link>
           </Nav>

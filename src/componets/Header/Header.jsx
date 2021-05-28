@@ -42,10 +42,9 @@ const Header = () => {
               <Nav.Link href="/about">Conocenos</Nav.Link>
             </Nav>
             <Nav>
-            <Nav.Link href="https://www.linkedin.com/in/leonardovandone-27735b157" target="_blank"> 
-              <i class="fab fa-linkedin fa-2x"></i>
-              </Nav.Link>
-
+            <Nav.Link href="https://www.instagram.com/cabincrew.formacion/" target="_blank">
+                <i class="fab fa-instagram-square fa-2x"></i>
+                </Nav.Link>
               <Nav.Link href="https://www.instagram.com/cabincrew.formacion/" target="_blank">
                 <i class="fab fa-instagram-square fa-2x"></i>
                 </Nav.Link>
