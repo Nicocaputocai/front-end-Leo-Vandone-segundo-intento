@@ -259,7 +259,7 @@ const Home = () => {
               <div className="cardborder-0 bg-light">
                 <div className="card-body">
                   <img
-                    src="SSi.jpg"
+                    src="SSI.jpg"
                     alt="Piloto"
                     style={{ height: "200px" }}
                     className="img-fluid"
