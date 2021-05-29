@@ -131,7 +131,7 @@ const Home = () => {
               <Card.Body>
                 <Card.Title>Bárbara Wajszczuk.</Card.Title>
                 <Card.Text>
-                  Técnico Superior en Lengua de Señas Argentina <br />{" "}
+                  Intérprete, técnica Superior en Lengua de Señas Argentina <br />{" "}
                   Facilitadora en LSA.
                 </Card.Text>
               </Card.Body>
@@ -144,7 +144,7 @@ const Home = () => {
                 className="rounded-circle"
               />
               <Card.Body>
-                <Card.Title>Jonhatan González Torales.</Card.Title>
+                <Card.Title>Yonhatan González Torales.</Card.Title>
                 <Card.Text>
                   Facilitador en Lengua de Señas Argentina y Sistema de Señas
                   Internacional.
