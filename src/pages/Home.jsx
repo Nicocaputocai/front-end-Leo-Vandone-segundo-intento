@@ -222,9 +222,11 @@ const Home = () => {
                   <hr />
                   <div className="row">
                     <div className="col-6">
-                      <button type="button" className="btn btn-dark btn-lg">
-                        Leer más
+                    <a href="/courses/60ac0cd677fc882280a91a55">
+                      <button type="button"  className="btn btn-dark btn-lg">
+                       Leer más
                       </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -247,9 +249,11 @@ const Home = () => {
                   <hr />
                   <div className="row">
                     <div className="col-6">
-                      <button type="button" className="btn btn-dark btn-lg">
-                        Leer más
+                    <a href="/courses/60ac107b77fc882280a91a58">
+                      <button type="button"  className="btn btn-dark btn-lg">
+                       Leer más
                       </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -276,9 +280,11 @@ const Home = () => {
                   <hr />
                   <div className="row">
                     <div className="col-6">
-                      <button type="button" className="btn btn-dark btn-lg">
-                        Leer más
+                    <a href="/courses/60ac0c4177fc882280a91a54">
+                      <button type="button"  className="btn btn-dark btn-lg">
+                       Leer más
                       </button>
+                      </a>
                     </div>
                   </div>
                 </div>
