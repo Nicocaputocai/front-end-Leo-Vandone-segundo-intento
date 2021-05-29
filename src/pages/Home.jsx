@@ -1,6 +1,35 @@
-import { Jumbotron, Container, Card, CardDeck } from "react-bootstrap";
+import {
+  Jumbotron,
+  Container,
+  Card,
+  CardDeck,
+  Row,
+  Col,
+  Image,
+} from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import CoursesDataService from "../services/CourseService.js";
 
 const Home = () => {
+  const [courses, setCourses] = useState([]);
+  
+  const retrieveCourses = () => {
+    CoursesDataService.getAll(courses)
+      .then((response) => {
+        setCourses(response.data.courses);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+    useEffect(() => {
+      retrieveCourses();
+    }, []);
+
+ 
+
   return (
     <>
       <div className="homePicture">
@@ -199,7 +228,29 @@ const Home = () => {
           </CardDeck>
         </Container>
       </Jumbotron>
-      <div className="py-5 text-center">
+      <Container>
+        <CardDeck>
+          {courses.map((course) => (
+            course.important ? 
+            <Card course = {course} className="cardborder-0 bg-light text-center" >
+              <Card.Img src={`/${course.img}`}    style={{ height: "200px" }} className="img-fluid" />
+              <Card.Body>
+                <Card.Title>{course.name}</Card.Title>
+                <Card.Text>{course.description}</Card.Text>
+              </Card.Body>
+
+                <a href={`/courses/${course._id}`}>
+                  <button type="button" className="btn btn-dark btn-lg">
+                    Leer más
+                  </button>
+                </a>
+            </Card>
+            : ""
+          ))}
+        </CardDeck>
+      </Container>
+            <br />
+      {/* <div className="py-5 text-center">
         <div className="container">
           <h1>Nuestros cursos destacados</h1>
           <div className="row">
@@ -292,7 +343,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
