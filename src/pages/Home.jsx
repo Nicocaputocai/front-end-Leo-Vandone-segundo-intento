@@ -237,13 +237,13 @@ const Home = () => {
               <Card.Body>
                 <Card.Title>{course.name}</Card.Title>
                 <Card.Text>{course.description}</Card.Text>
-              </Card.Body>
-
+                  <hr />
                 <a href={`/courses/${course._id}`}>
                   <button type="button" className="btn btn-dark btn-lg">
                     Leer más
                   </button>
                 </a>
+                </Card.Body>
             </Card>
             : ""
           ))}
