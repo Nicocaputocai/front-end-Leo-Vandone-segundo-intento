@@ -6,6 +6,7 @@ import {
   Row,
   Col,
   Image,
+  Spinner
 } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
@@ -37,12 +38,12 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="text-center justify-content-center align-self-center">
-                <img
+                <Image
                   src="logo-original.png"
                   alt=""
                   srcset=""
                   height="400"
-                  className="d-none d-sm-block"
+                  className="d-sm-block"
                 />
                 <h1>Cabin Crew World Training</h1>
                 <p className="">
@@ -169,7 +170,7 @@ const Home = () => {
               <Card.Img
                 variant="top"
                 src="Jonhatan Gonzalez.jpg"
-                alt="Jonhatan Gonzalez"
+                alt="Yonhatan Gonzalez"
                 className="rounded-circle"
               />
               <Card.Body>
@@ -186,7 +187,7 @@ const Home = () => {
             <Card>
               <Card.Img
                 variant="top"
-                src="María Isabel Salinas.jpg"
+                src="Maria Isabel Salinas.jpg"
                 alt="María Isabel Salinas"
                 className="rounded-circle"
               />

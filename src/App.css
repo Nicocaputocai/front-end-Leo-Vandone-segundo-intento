@@ -14,7 +14,7 @@
 .homePicture{
   background: url('./Home3.jpg');
   background-size: cover;
-  min-height: 600px;
+  min-height: 650px;
   position: relative;
 }
 .overlay{
