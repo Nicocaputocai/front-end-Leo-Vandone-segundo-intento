@@ -3,7 +3,7 @@ import Header from './componets/Header';
 import './App.css';
 import About from './pages/About.jsx';
 import Admin from './pages/Admin';
-import Note from './pages/note.jsx';
+import Note from './pages/Note.jsx';
 import Contact from './pages/Contact';
 import Courses from './pages/Courses';
 import Category from './pages/Category';
