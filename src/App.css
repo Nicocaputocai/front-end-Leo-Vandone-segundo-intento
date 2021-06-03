@@ -41,3 +41,9 @@ h1{
 
   color: #008000;
 }
+
+#author{
+  border: 1px solid black;
+  border-radius: 10px !important;
+  
+}

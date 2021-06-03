@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import CoursesDataService from '../../services/CourseService.js';
+import BlogDataService from '../../services/BlogService.js'
 import "./Header.css";
 // import Button from '../Button'
 const Header = () => {
 
   const [courses, setCourses] = useState([]);
+  const [notes, setNotes] = useState([])
+
 
   const retrieveCourses = () => {
     CoursesDataService.getAll()
@@ -19,6 +22,20 @@ const Header = () => {
 
   useEffect(() => {
     retrieveCourses();
+  }, []);
+
+  const retrieveNotes = () => {
+    BlogDataService.getAllNotes()
+      .then(response => {
+        setNotes(response.data.blogs);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    retrieveNotes();
   }, []);
 
   return (
@@ -36,8 +53,15 @@ const Header = () => {
                   {course.name}
                 </NavDropdown.Item>
               ))}
-              
             </NavDropdown>
+            <NavDropdown title="Notas" id="basic-nav-dropdown">
+              {notes.map((note) =>(
+                <NavDropdown.Item href={`/blog/cat/${note.category}`}>
+                  {note.category}
+                
+                </NavDropdown.Item>
+              ))}
+        </NavDropdown>
             {/* <Nav.Link href="/blog">Notas</Nav.Link> */}
             <Nav.Link href="/about">Conocenos</Nav.Link>
           </Nav>

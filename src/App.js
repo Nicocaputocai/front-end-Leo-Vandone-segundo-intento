@@ -3,9 +3,10 @@ import Header from './componets/Header';
 import './App.css';
 import About from './pages/About.jsx';
 import Admin from './pages/Admin';
-import Blog from './pages/Blog';
+import Note from './pages/note.jsx';
 import Contact from './pages/Contact';
 import Courses from './pages/Courses';
+import Category from './pages/Category';
 import Course from './componets/Course.jsx';
 import Home from './pages/Home';
 import Test from './pages/Test';
@@ -28,8 +29,12 @@ function App() {
             
           </Route>
 
-          <Route path="/blog" exact>
-            <Blog />
+          <Route path="/blog/cat/:category">
+            <Category />
+          </Route>
+
+          <Route path="/blog/:id">
+            <Note />
           </Route>
 
           <Route path="/contact" exact>
