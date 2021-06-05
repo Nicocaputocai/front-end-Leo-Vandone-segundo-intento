@@ -29,7 +29,9 @@ const Home = () => {
       retrieveCourses();
     }, []);
 
- 
+    const truncate = (str) => {
+      return str.length > 50 ? str.substring(0, 350) + " [...]" : str;
+    }
 
   return (
     <>
@@ -161,7 +163,7 @@ const Home = () => {
               <Card.Body>
                 <Card.Title>Bárbara Wajszczuk.</Card.Title>
                 <Card.Text>
-                  Intérprete, técnica Superior en Lengua de Señas Argentina <br />{" "}
+                  Intérprete, técnico Superior en Lengua de Señas Argentina <br />{" "}
                   Facilitadora en LSA.
                 </Card.Text>
               </Card.Body>
@@ -237,7 +239,7 @@ const Home = () => {
               <Card.Img src={`/${course.img}`}    style={{ height: "200px" }} className="img-fluid" />
               <Card.Body>
                 <Card.Title>{course.name}</Card.Title>
-                <Card.Text>{course.description}</Card.Text>
+                <Card.Text>{truncate(course.description)}</Card.Text>
                   <hr />
                 <a href={`/courses/${course._id}`}>
                   <button type="button" className="btn btn-dark btn-lg">

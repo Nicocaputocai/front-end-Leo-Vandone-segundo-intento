@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Container, Row, Col, Image, Card } from "react-bootstrap";
+import { Container, Row, Col, Image, Card, Nav } from "react-bootstrap";
 import BlogDataService from "../services/BlogService.js";
 
 const Blog = () => {
@@ -19,6 +19,7 @@ const Blog = () => {
         console.log(error);
       });
   };
+  
   useEffect(() => {
     retrieveNote();
   }, []);
@@ -34,6 +35,7 @@ const Blog = () => {
         </Row>
         <Row>
           <h1>{note.title}</h1>
+          <span>03/06/2021</span>
         </Row>
         <hr />
         <Row>
@@ -41,43 +43,40 @@ const Blog = () => {
         </Row>
         <hr />
       </Container>
-      <Container>
-        <Row  className='align-items-center'>
-          <Col lg='2'>
+      <Container id='author'>
+        <Row className='align-items-center'>
+          <Col lg='1'>
             <Image
               className=" img-fluid rounded-circle"
               src="../Leonardo Vandone.jpg"
               style={{ height: "80px", width: "150px" }}>
             </Image>
           </Col>
-          <Col lg='1'>
-            <span>Leonardo Vandone</span>
-          </Col>
-          <Col>
-            <span>Director de Cabin Crew World Training Instructor-Facilitador en FFHH-CRM.TEM  Tripulante de Cabina de Pasajeros ILSA.</span>
+          <Col lg='11'>
+            <span style={{fontWeight: 'bold'}}> Leonardo Vandone</span> <br />
+            <span>Director de Cabin Crew World Training.</span>
           </Col>
         </Row>
-        <br />
+
       </Container>
-      <Container>
-        <Row id='author' className='align-items-center'>
-          <Col lg='2'>
+      <br />
+      <Container >
+        <Row className='align-items-center'>
+          <Col lg='1'>
             <Image
               className=" img-fluid rounded-circle"
-              src="../Barbara Wajszczuk.jpg"
+              src="../Leonardo Vandone.jpg"
               style={{ height: "80px", width: "150px" }}>
             </Image>
           </Col>
-          <Col lg='1'>
-            <span>Barbara Wajszczuk</span>
+          <Col lg='11'>
+            <span style={{fontWeight: 'bold'}}> Leonardo Vandone</span> <br />
+            <span>Director de Cabin Crew World Training.</span>
           </Col>
-          <Col>
-            <span> Intérprete, técnica Superior en Lengua de Señas Argentina. Facilitadora en LSA.</span>
-          </Col>
-
         </Row>
-        <br />
+
       </Container>
+      <br /> 
     </>
   );
 };
