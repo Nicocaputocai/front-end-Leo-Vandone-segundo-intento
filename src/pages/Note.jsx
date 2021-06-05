@@ -5,7 +5,7 @@ import BlogDataService from "../services/BlogService.js";
 
 const Blog = () => {
   const { id } = useParams();
-
+ 
   const [note, setNote] = useState([]);
   console.log(id);
 
@@ -24,6 +24,7 @@ const Blog = () => {
     retrieveNote();
   }, []);
 
+  // const parrafo = note.paragraph.replace((/(?:\r\n|\r|\n)/g, "<br />"));
   return (
     <>
       <Container>
@@ -39,6 +40,7 @@ const Blog = () => {
         </Row>
         <hr />
         <Row>
+          {/* <p> {parrafo} </p> */}
           <p>{note.paragraph}</p>
         </Row>
         <hr />

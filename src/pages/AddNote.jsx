@@ -40,7 +40,7 @@ const Create = () => {
           category: response.data.category,
           author: response.data.author,
           coAuthor: response.data.coAuthor,
-        });
+        })
       })
       .catch((err) => console.log(err));
 
@@ -116,6 +116,7 @@ const Create = () => {
             <option>5</option>
           </Form.Control>
         </Form.Group>
+        
         <Button variant="primary" onClick={save}>
           Publicar nota
         </Button>
