@@ -24,7 +24,7 @@ const Blog = () => {
     retrieveNote();
   }, []);
 
-  // const parrafo = note.paragraph.replace((/(?:\r\n|\r|\n)/g, "<br />"));
+  
   return (
     <>
       <Container>
@@ -40,8 +40,8 @@ const Blog = () => {
         </Row>
         <hr />
         <Row>
-          {/* <p> {parrafo} </p> */}
-          <p>{note.paragraph}</p>
+
+          <p style={{whiteSpace: "pre-wrap"}}>{note.paragraph}</p>
         </Row>
         <hr />
       </Container>
