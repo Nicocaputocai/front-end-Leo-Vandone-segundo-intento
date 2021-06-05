@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import BlogDataService from "../services/BlogService.js";
 
-const Create = () =>{
+const Create = () => {
   const initialFormNote = {
     img: "",
     title: "",
     paragraph: "",
     category: "",
     author: "",
-    coAutor: "",
+    coAuthor: "",
   };
 
   const [createNote, setCreateNote] = useState(initialFormNote);
@@ -26,9 +26,10 @@ const Create = () =>{
       paragraph: createNote.paragraph,
       category: createNote.category,
       author: createNote.author,
-      coAutor: createNote.coAutor,
-      important: createNote.important,
+      coAuthor: createNote.coAuthor,
     };
+
+    console.log(data);
 
     BlogDataService.createNote(data)
       .then((response) => {
@@ -38,24 +39,23 @@ const Create = () =>{
           paragraph: response.data.paragraph,
           category: response.data.category,
           author: response.data.author,
-          coAutor: response.data.coAutor,
+          coAuthor: response.data.coAuthor,
         });
       })
       .catch((err) => console.log(err));
+
+
   };
 
   return (
     <>
       <Form>
         <Form.Group controlId="img">
-          <Form>
-            <Form.File name="img" id="img" label="Foto de portada" />
-          </Form>
+          <Form.File name="img" label="Foto de portada" onChange={handleInputChange} />
         </Form.Group>
-        <Form.Group required controlId="title" name="title">
+        <Form.Group required controlId="title">
           <Form.Label>Titulo de la nota</Form.Label>
           <Form.Control
-            type="string"
             name="title"
             onChange={handleInputChange}
             as="textarea"
@@ -65,7 +65,6 @@ const Create = () =>{
         <Form.Group required controlId="paragraph">
           <Form.Label>Parrafo de la nota</Form.Label>
           <Form.Control
-            type="string"
             name="paragraph"
             onChange={handleInputChange}
             as="textarea"
@@ -75,12 +74,12 @@ const Create = () =>{
         <Form.Group required controlId="category">
           <Form.Label>Categoría</Form.Label>
           <Form.Control
-            type="string"
             name="category"
             onChange={handleInputChange}
             as="select"
+            defaultValue={''}
           >
-            <option disabled>Seleccione una categoría.....</option>
+            <option value="" disabled>Seleccione una categoría.....</option>
             <option value="Tecnicas">Técnicas</option>
             <option value="Entrevistas"> Entrevistas </option>
             <option value="Historias de vida">Historias de vida</option>
@@ -89,28 +88,26 @@ const Create = () =>{
         <Form.Group required controlId="author">
           <Form.Label>Autor</Form.Label>
           <Form.Control
-            type="string"
             name="author"
             onChange={handleInputChange}
             as="select"
-            select
+            defaultValue={''}
           >
-            <option disabled>Seleccione una categoría.....</option>
+            <option value="" disabled>Seleccione un autor.....</option>
             <option value="Leonardo Vandone">Leonardo Vandone</option>
           </Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="coauthor">
-          <Form.Label>Coautor</Form.Label>
+        <Form.Group controlId="coAuthor">
+          <Form.Label>Coauthor</Form.Label>
           <Form.Control
-            type="string"
             name="coAuthor"
             onChange={handleInputChange}
             as="select"
-            select
+            defaultValue={'#'}
           >
-            <option value="" disabled>
-              Seleccionar coautor.....
+            <option value="#" disabled>
+              Seleccionar coauthor.....
             </option>
             <option value="">No</option>
             <option>2</option>
@@ -119,7 +116,7 @@ const Create = () =>{
             <option>5</option>
           </Form.Control>
         </Form.Group>
-        <Button variant="primary" onClick={save} type="submit">
+        <Button variant="primary" onClick={save}>
           Publicar nota
         </Button>
       </Form>
