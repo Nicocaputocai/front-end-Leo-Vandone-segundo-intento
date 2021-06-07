@@ -53,7 +53,7 @@ const Category = () =>{
             <Container >
             <Row className='align-items-center'>
               <Col lg='6'>
-              <Image src="/FFHH-CRM-TEM.jpg" style={{width:'900', height:'600'}}>
+              <Image src={`/${note.img}`} style={{width:'500px', height:'300px'}}>
                 
               </Image>
               </Col>

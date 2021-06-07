@@ -68,7 +68,7 @@ const Header = () => {
                 <NavDropdown.Item href={'/blog/cat/Entrevistas'}>
                   <span> Entrevistas </span>
                 </NavDropdown.Item>
-                <NavDropdown.Item href={'/blog/cat/Historias-de-vida'}>
+                <NavDropdown.Item href={'/blog/cat/Historias de vida'}>
                   <span> Historias de vida </span>
                 </NavDropdown.Item>
 

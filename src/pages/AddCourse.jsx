@@ -1,46 +1,152 @@
-import { InputGroup, FormControl, Form } from 'react-bootstrap'; 
+import { useState } from "react";
+import { Button, Form, Jumbotron, Row, Col } from "react-bootstrap";
+import CoursesDataService from "../services/CourseService";
 
 const AddCourse= () =>{
-    return(
-        <>
-        <InputGroup className="mb-3">
-    <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-    <FormControl
-      placeholder="Username"
-      aria-label="Username"
-      aria-describedby="basic-addon1"
-    />
-  </InputGroup>
+  const initialFormCourse = {
+    img: "",
+    name: "",
+    introduction: "",
+    description: "",
+    duration: "",
+    requirements: "",
+    modality: "",
+    important: 0,
+  };
 
-  <InputGroup className="mb-3">
-    <FormControl
-      placeholder="Recipient's username"
-      aria-label="Recipient's username"
-      aria-describedby="basic-addon2"
-    />
-    <InputGroup.Text id="basic-addon2">@example.com</InputGroup.Text>
-  </InputGroup>
+  const [createCourse, setCreateCourse] = useState(initialFormCourse);
+  const [submitted, setSubmitted] = useState();
 
-  <Form.Label htmlFor="basic-url">Your vanity URL</Form.Label>
-  <InputGroup className="mb-3">
-    <InputGroup.Text id="basic-addon3">
-      https://example.com/users/
-    </InputGroup.Text>
-    <FormControl id="basic-url" aria-describedby="basic-addon3" />
-  </InputGroup>
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setCreateCourse({ ...createCourse, [name]: value });
+  };
 
-  <InputGroup className="mb-3">
-    <InputGroup.Text>$</InputGroup.Text>
-    <FormControl aria-label="Amount (to the nearest dollar)" />
-    <InputGroup.Text>.00</InputGroup.Text>
-  </InputGroup>
+  const save = () => {
+    let data = {
+      img: createCourse.img,
+      name: createCourse.name,
+      introduction: createCourse.introduction,
+      description: createCourse.description,
+      duration: createCourse.duration,
+      requirements: createCourse.requirements,
+      modality: createCourse.modality,
+      import: createCourse.important
+    };
 
-  <InputGroup>
-    <InputGroup.Text>With textarea</InputGroup.Text>
-    <FormControl as="textarea" aria-label="With textarea" />
-  </InputGroup>
-        </>
-    )
+    console.log(data);
+
+    CoursesDataService.createCourses(data)
+      .then((response) => {
+        setCreateCourse({
+          img: response.data.img,
+          name: response.data.name,
+          introduction: response.data.introduction,
+          description: response.data.description,
+          duration: response.data.duration,
+          requirements: response.data.requirements,
+          modality: response.data.modality,
+          important: response.data.important
+        });
+        setSubmitted(true);
+      })
+      .catch((err) => console.log(err));
+  };
+  const newCourse = () => {
+    setCreateCourse(initialFormCourse);
+    setSubmitted(false);
+  };
+
+  
+
+  return (
+    <>
+      {submitted ? (
+        <Jumbotron>
+          <h1>El curso se cargo correctamente</h1>
+          <Row>
+            <Col>
+              <Button variant="primary" onClick={newCourse}>
+                Agregar otro
+              </Button>
+            </Col>
+            <Col>
+              <Button variant="primary" href="/">
+                Home
+              </Button>
+            </Col>
+          </Row>
+        </Jumbotron>
+      ) : (
+        <Form.Group>
+          <Form.Group controlId="img">
+            <Form.File
+              name="img"
+              label="Foto de portada"
+              onChange={handleInputChange}
+            />
+          </Form.Group>
+          <Form.Group required controlId="name">
+            <Form.Label>Nombre del curso</Form.Label>
+            <Form.Control
+              name="name"
+              onChange={handleInputChange}
+              as="textarea"
+              rows={1}
+            />
+          </Form.Group>
+          <Form.Group required controlId="introduction">
+            <Form.Label>Introducción al curso</Form.Label>
+            <Form.Control
+              name="introduction"
+              onChange={handleInputChange}
+              as="textarea"
+              rows={4}
+            />
+          </Form.Group>
+          <Form.Group required controlId="description">
+            <Form.Label>Descripción del curso</Form.Label>
+            <Form.Control
+              name="description"
+              onChange={handleInputChange}
+              as="textarea"
+              rows={4}
+            />
+          </Form.Group>
+          <Form.Group required controlId="duration">
+            <Form.Label>Duración del curso</Form.Label>
+            <Form.Control
+              name="duration"
+              onChange={handleInputChange}
+              as="textarea"
+              rows={1}
+            />
+          </Form.Group>
+          <Form.Group required controlId="requirements">
+            <Form.Label>Requisitos</Form.Label>
+            <Form.Control
+              name="requirements"
+              onChange={handleInputChange}
+              as="textarea"
+              rows={1}
+            />
+          </Form.Group>
+          <Form.Group required controlId="modality">
+            <Form.Label>Modalidad del curso</Form.Label>
+            <Form.Control
+              name="modality"
+              onChange={handleInputChange}
+              as="textarea"
+              rows={1}
+            />
+          </Form.Group>
+          <Button variant="primary" onClick={save}>
+            Publicar nota
+          </Button>
+        </Form.Group>
+      )}
+    </>
+  )
 }
 
 export default AddCourse

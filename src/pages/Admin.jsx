@@ -2,6 +2,8 @@ import {Container,Col, Nav, Row, Tab} from 'react-bootstrap';
 import AddNote from './AddNote.jsx';
 import AddCourse from './AddCourse'
 import Create from './AddNote.jsx';
+import EditDeleteNotes from './EditDeleteNotes'
+
 
 const Admin = () =>{
 
@@ -36,7 +38,7 @@ const Admin = () =>{
 
         </Tab.Pane>
         <Tab.Pane eventKey="second">
-
+        <EditDeleteNotes />
         </Tab.Pane>
         <Tab.Pane eventKey="third">
             <AddCourse/>

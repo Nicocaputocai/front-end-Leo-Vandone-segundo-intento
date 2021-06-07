@@ -58,7 +58,7 @@ const Course = () => {
       <div className="text-center">
         <div className="container">
           <div className="m-5">
-            <p>
+            <p style={{whiteSpace: "pre-wrap"}}>
                 {course.description}
             </p>
           </div>

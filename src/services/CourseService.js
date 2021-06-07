@@ -2,7 +2,8 @@ import http from '../http-common.js';
 
 const CoursesDataService = {
     getAll: () => http.get('/courses'),
-    getById: (id) => http.get(`/courses/show/${id}`)
+    getById: (id) => http.get(`/courses/show/${id}`),
+    createCourses: (data) => http.post('/courses/create', data),
 }
 
 // const getAll = () => {

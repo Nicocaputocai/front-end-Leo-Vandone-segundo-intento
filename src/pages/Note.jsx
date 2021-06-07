@@ -30,7 +30,7 @@ const Blog = () => {
       <Container>
         <Row>
           <Image
-            src="/FFHH-CRM-TEM.jpg"
+            src={`/${note.img}`}
             style={{ height: "400px", width: "1500px" }}
           ></Image>
         </Row>
