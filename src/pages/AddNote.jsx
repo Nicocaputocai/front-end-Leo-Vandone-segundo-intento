@@ -15,6 +15,14 @@ const Create = () => {
     coAuthor: "",
   };
 
+  const createFormData = (data) => {
+    const formData = new FormData();
+    Object.keys(data).forEach((key) => {
+      formData.append(key, data[key]);
+    });
+    return formData;
+  };
+
   const [createNote, setCreateNote] = useState(initialFormNote);
   const [submitted, setSubmitted] = useState();
 
@@ -35,7 +43,7 @@ const Create = () => {
 
     console.log(data);
 
-    BlogDataService.createNote(data)
+    BlogDataService.createNote(createFormData(data))
       .then((response) => {
         setCreateNote({
           img: response.data.img,
@@ -80,6 +88,7 @@ const Create = () => {
             <Form.File
               name="img"
               label="Foto de portada"
+              accept="image/*, video/*"
               onChange={handleInputChange}
             />
           </Form.Group>
