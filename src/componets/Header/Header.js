@@ -54,7 +54,7 @@ const Header = () => {
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
-            <NavDropdown title="Notas" id="basic-nav-dropdown">
+            {/* <NavDropdown title="Notas" id="basic-nav-dropdown">
             <NavDropdown.Item href={'/blog/cat/Prueba'}>
                   <span> Prueba </span>
                 </NavDropdown.Item>
@@ -72,7 +72,7 @@ const Header = () => {
                   <span> Historias de vida </span>
                 </NavDropdown.Item>
 
-        </NavDropdown>
+        </NavDropdown> */}
             {/* <Nav.Link href="/blog">Notas</Nav.Link> */}
             <Nav.Link href="/about">Conocenos</Nav.Link>
           </Nav>

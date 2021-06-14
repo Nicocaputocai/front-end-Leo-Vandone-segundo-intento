@@ -30,7 +30,7 @@ const Blog = () => {
       <Container>
         <Row>
           <Image
-            src={`/${note.img}`}
+            src={`https://cabin-crew-api.herokuapp.com/img/${note.img}`}
             style={{ height: "400px", width: "1500px" }}
           ></Image>
         </Row>

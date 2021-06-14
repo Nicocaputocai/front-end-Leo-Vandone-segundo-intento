@@ -21,6 +21,17 @@ const AddCourse= () =>{
     const { name, value } = event.target;
     setCreateCourse({ ...createCourse, [name]: value });
   };
+  const createFormData = (data) => {
+    const formData = new FormData();
+    Object.keys(data).forEach((key) => {
+      formData.append(key, data[key]);
+    });
+    return formData;
+  };
+  const handleInputFileChange = (event) => {
+    const { name, files } = event.target;
+    setCreateCourse({ ...createCourse, [name]: files[0] });
+  };
 
   const save = () => {
     let data = {
@@ -36,7 +47,7 @@ const AddCourse= () =>{
 
     console.log(data);
 
-    CoursesDataService.createCourses(data)
+    CoursesDataService.createCourses(createFormData(data))
       .then((response) => {
         setCreateCourse({
           img: response.data.img,
@@ -83,7 +94,7 @@ const AddCourse= () =>{
             <Form.File
               name="img"
               label="Foto de portada"
-              onChange={handleInputChange}
+              onChange={handleInputFileChange}
             />
           </Form.Group>
           <Form.Group required controlId="name">

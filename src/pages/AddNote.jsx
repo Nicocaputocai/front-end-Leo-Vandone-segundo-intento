@@ -31,6 +31,11 @@ const Create = () => {
     setCreateNote({ ...createNote, [name]: value });
   };
 
+  const handleInputFileChange = (event) => {
+    const { name, files } = event.target;
+    setCreateNote({ ...createNote, [name]: files[0] });
+  };
+
   const save = () => {
     let data = {
       img: createNote.img,
@@ -72,7 +77,7 @@ const Create = () => {
           <Row>
             <Col>
               <Button variant="primary" onClick={newNote}>
-                Add
+                Agregar otra nota
               </Button>
             </Col>
             <Col>
@@ -89,7 +94,7 @@ const Create = () => {
               name="img"
               label="Foto de portada"
               accept="image/*, video/*"
-              onChange={handleInputChange}
+              onChange={handleInputFileChange}
             />
           </Form.Group>
           <Form.Group required controlId="title">
