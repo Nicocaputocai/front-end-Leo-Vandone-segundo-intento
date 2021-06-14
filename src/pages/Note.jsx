@@ -60,7 +60,7 @@ const Blog = () => {
       </Container>
       {author.map((author) =>
         note.author == author.name ? (
-          <Container id="author">
+          <Container>
             <Row className="align-items-center">
               <Col lg="1">
                 <Image
@@ -80,21 +80,27 @@ const Blog = () => {
         )
       )}
       <br />
+      {author.map((author) =>
+      note.coAuthor && note.coAuthor == author.name ? (
       <Container>
         <Row className="align-items-center">
           <Col lg="1">
             <Image
               className=" img-fluid rounded-circle"
-              src="../Leonardo Vandone.jpg"
+              src={`https://cabin-crew-api.herokuapp.com/img/${author.img}`}
               style={{ height: "80px", width: "150px" }}
             ></Image>
           </Col>
           <Col lg="11">
-            <span style={{ fontWeight: "bold" }}> Leonardo Vandone</span> <br />
-            <span>Director de Cabin Crew World Training.</span>
+            <span style={{ fontWeight: "bold" }}> {author.name}</span> <br />
+            <span>{author.description}</span>
           </Col>
         </Row>
       </Container>
+      ) : (
+        ""
+      )
+    )}
       <br />
     </>
   );
