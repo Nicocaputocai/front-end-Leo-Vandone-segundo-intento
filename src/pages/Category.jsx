@@ -59,6 +59,7 @@ const Category = () =>{
               </Col>
               <Col lg='6'>
                 <h3> {note.title}</h3>
+                <span>{note.updatedAt}</span>
                 <p> {truncate(note.paragraph)}</p>
                 <a href={`/blog/${note._id}`} >
                   <button type="button" className="btn btn-dark btn-lg">

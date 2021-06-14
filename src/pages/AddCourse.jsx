@@ -17,6 +17,7 @@ const AddCourse= () =>{
   const [createCourse, setCreateCourse] = useState(initialFormCourse);
   const [submitted, setSubmitted] = useState();
 
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setCreateCourse({ ...createCourse, [name]: value });
@@ -68,7 +69,7 @@ const AddCourse= () =>{
     setSubmitted(false);
   };
 
-  
+ 
 
   return (
     <>

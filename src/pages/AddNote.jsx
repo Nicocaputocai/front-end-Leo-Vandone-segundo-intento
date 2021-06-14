@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Form, Jumbotron, Row, Col } from "react-bootstrap";
 import BlogDataService from "../services/BlogService.js";
+import AuthorDataService from '../services/AuthorService'
 
 
 const Create = () => {
@@ -25,6 +26,7 @@ const Create = () => {
 
   const [createNote, setCreateNote] = useState(initialFormNote);
   const [submitted, setSubmitted] = useState();
+  const [authors, setAuthors] = useState([])
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -67,7 +69,17 @@ const Create = () => {
     setSubmitted(false);
   };
 
-  
+  const retrieveAuthor = () =>{
+    AuthorDataService.getAll()
+    .then((response) => {
+      setAuthors(response.data.authors)
+      console.log(authors);
+    })
+    .catch(err => console.log(err))
+  }
+  useEffect(() =>{
+    retrieveAuthor()
+  }, [])
 
   return (
     <>
@@ -142,7 +154,9 @@ const Create = () => {
               <option value="" disabled>
                 Seleccione un autor.....
               </option>
-              <option value="Leonardo Vandone">Leonardo Vandone</option>
+              {authors.map((author) =>(
+                <option value={author.name}> {author.name} </option>
+              ))}
             </Form.Control>
           </Form.Group>
 
@@ -158,10 +172,9 @@ const Create = () => {
                 Seleccionar coauthor.....
               </option>
               <option value="">No</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              {authors.map((author) =>(
+                <option value={author.name}> {author.name} </option>
+              ))}
             </Form.Control>
           </Form.Group>
 
