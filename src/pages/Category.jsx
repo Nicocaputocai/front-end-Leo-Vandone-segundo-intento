@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { Container, Row, Col, Image, Card } from "react-bootstrap";
 import BlogDataService from "../services/BlogService.js";
+import moment from "moment";
 
 const Category = () =>{
 
@@ -53,13 +54,13 @@ const Category = () =>{
             <Container >
             <Row className='align-items-center'>
               <Col lg='6'>
-              <Image src={`/${note.img}`} style={{width:'500px', height:'300px'}}>
+              <Image src={`https://cabin-crew-api.herokuapp.com/img/${note.img}`} style={{width:'500px', height:'300px'}}>
                 
               </Image>
               </Col>
               <Col lg='6'>
                 <h3> {note.title}</h3>
-                <span>{note.updatedAt}</span>
+                <span>{`Creado el ${moment(note.updatedAt).format("DD/MM/YYYY")} a las ${moment(note.updatedAt).format("HH:MM")} hs.`}</span>
                 <p> {truncate(note.paragraph)}</p>
                 <a href={`/blog/${note._id}`} >
                   <button type="button" className="btn btn-dark btn-lg">

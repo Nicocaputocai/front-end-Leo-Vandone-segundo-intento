@@ -3,7 +3,7 @@ import AddNote from './AddNote.jsx';
 import AddCourse from './AddCourse'
 import Create from './AddNote.jsx';
 import EditDeleteNotes from './EditDeleteNotes'
-
+import AddAuthor from './AddAuthor'
 
 const Admin = () =>{
 
@@ -29,6 +29,9 @@ const Admin = () =>{
         <Nav.Item>
           <Nav.Link eventKey="fourth">Editar/Eliminar cursos</Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey='fifth'>Agregar autor/co-autor</Nav.Link>
+        </Nav.Item>
       </Nav>
     </Col>
     <Col sm={9}>
@@ -44,7 +47,10 @@ const Admin = () =>{
             <AddCourse/>
         </Tab.Pane>
         <Tab.Pane eventKey="fourth">
-
+          
+        </Tab.Pane>
+        <Tab.Pane eventKey="fifth">
+          <AddAuthor/>
         </Tab.Pane>
       </Tab.Content>
     </Col>
