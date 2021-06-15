@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { Container, Row, Col, Image, Card, Nav } from "react-bootstrap";
 import BlogDataService from "../services/BlogService.js";
 import AuthorDataService from "../services/AuthorService";
+import moment from "moment";
 
 const Blog = () => {
   const { id } = useParams();
@@ -39,6 +40,8 @@ const Blog = () => {
     retrieveAuthor();
   }, []);
 
+  
+
   return (
     <>
       <Container>
@@ -50,7 +53,7 @@ const Blog = () => {
         </Row>
         <Row>
           <h1>{note.title}</h1>
-          <span>{note.updatedAt}</span>
+          <span>{`Creado el ${moment(note.updatedAt).format("DD-MM-YYYY")} a las ${moment(note.updatedAt).format("HH:MM")} hs.`}</span>
         </Row>
         <hr />
         <Row>
@@ -60,7 +63,7 @@ const Blog = () => {
       </Container>
       {author.map((author) =>
         note.author == author.name ? (
-          <Container>
+          <Container id="author">
             <Row className="align-items-center">
               <Col lg="1">
                 <Image
@@ -80,27 +83,21 @@ const Blog = () => {
         )
       )}
       <br />
-      {author.map((author) =>
-      note.coAuthor && note.coAuthor == author.name ? (
       <Container>
         <Row className="align-items-center">
           <Col lg="1">
             <Image
               className=" img-fluid rounded-circle"
-              src={`https://cabin-crew-api.herokuapp.com/img/${author.img}`}
+              src="../Leonardo Vandone.jpg"
               style={{ height: "80px", width: "150px" }}
             ></Image>
           </Col>
           <Col lg="11">
-            <span style={{ fontWeight: "bold" }}> {author.name}</span> <br />
-            <span>{author.description}</span>
+            <span style={{ fontWeight: "bold" }}> Leonardo Vandone</span> <br />
+            <span>Director de Cabin Crew World Training.</span>
           </Col>
         </Row>
       </Container>
-      ) : (
-        ""
-      )
-    )}
       <br />
     </>
   );
