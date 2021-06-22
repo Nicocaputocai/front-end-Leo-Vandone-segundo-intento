@@ -38,7 +38,9 @@ const Header = () => {
                   Ceremonial y Protocolo
                 </NavDropdown.Item>
               </NavDropdown>
-              {/* <Nav.Link href="/blog">Notas</Nav.Link> */}
+              <NavDropdown>
+                
+              </NavDropdown>
               <Nav.Link href="/contact">Contacto</Nav.Link>
               <Nav.Link href="/about">Conocenos</Nav.Link>
             </Nav>

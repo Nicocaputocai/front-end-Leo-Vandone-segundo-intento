@@ -41,12 +41,12 @@ const Category = () =>{
           return string.substring(0, limit)
         }
         const truncate = (str) => {
-          return str.length > 50 ? str.substring(0, 500) + "[...]" : str;
+          return str.length > 50 ? str.substring(0, 300) + "[...]" : str;
         }
     return (
       <>
       <Container>
-      <h1> Nuestras notas sobre: {category} </h1> <hr />
+      <h1>{category}</h1> <hr />
       </Container>
 
           {notes.map((note) =>(
@@ -60,7 +60,7 @@ const Category = () =>{
               </Col>
               <Col lg='6'>
                 <h3> {note.title}</h3>
-                <span>{`Creado el ${moment(note.updatedAt).format("DD/MM/YYYY")} a las ${moment(note.updatedAt).format("HH:MM")} hs.`}</span>
+                <span>{`Creado el ${moment(note.updatedAt).format("DD/MM/YYYY")}.`}</span>
                 <p> {truncate(note.paragraph)}</p>
                 <a href={`/blog/${note._id}`} >
                   <button type="button" className="btn btn-dark btn-lg">

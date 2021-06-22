@@ -53,7 +53,7 @@ const Blog = () => {
         </Row>
         <Row>
           <h1>{note.title}</h1>
-          <span>{`Creado el ${moment(note.updatedAt).format("DD/MM/YYYY")} a las ${moment(note.updatedAt).format("HH:MM")} hs.`}</span>
+          <span>{`Creado el ${moment(note.updatedAt).format("DD/MM/YYYY")}.`}</span>
         </Row>
         <hr />
         <Row>

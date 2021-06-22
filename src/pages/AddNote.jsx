@@ -140,7 +140,6 @@ const Create = () => {
               </option>
               <option value="Tecnicas">Técnicas</option>
               <option value="Entrevistas"> Entrevistas </option>
-              <option value="Historias de vida">Historias de vida</option>
             </Form.Control>
           </Form.Group>
           <Form.Group required controlId="author">

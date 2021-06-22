@@ -55,23 +55,12 @@ const Header = () => {
               ))}
             </NavDropdown>
             {/* <NavDropdown title="Notas" id="basic-nav-dropdown">
-            <NavDropdown.Item href={'/blog/cat/Prueba'}>
-                  <span> Prueba </span>
-                </NavDropdown.Item>
-                
-                <NavDropdown.Item href={'/blog/cat/segunda prueba'}>
-                  <span> Segunda Prueba </span>
-                </NavDropdown.Item>
                 <NavDropdown.Item href={'/blog/cat/Tecnicas'}>
                   <span> Técnicas </span>
-                </NavDropdown.Item>
-                <NavDropdown.Item href={'/blog/cat/Entrevistas'}>
-                  <span> Entrevistas </span>
                 </NavDropdown.Item>
                 <NavDropdown.Item href={'/blog/cat/Historias de vida'}>
                   <span> Historias de vida </span>
                 </NavDropdown.Item>
-
         </NavDropdown> */}
             {/* <Nav.Link href="/blog">Notas</Nav.Link> */}
             <Nav.Link href="/about">Conocenos</Nav.Link>

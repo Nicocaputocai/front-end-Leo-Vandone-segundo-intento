@@ -96,7 +96,8 @@ const Course = () => {
           </a>
         </Container>
       </Container>
-      
+      <br />
+      <br />
     </>
 
     );

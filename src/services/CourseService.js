@@ -4,6 +4,8 @@ const CoursesDataService = {
     getAll: () => http.get('/courses'),
     getById: (id) => http.get(`/courses/show/${id}`),
     createCourses: (data) => http.post('/courses/create', data),
+    deleteNote: (id) => http.delete(`/courses/delete/${id}`),
+    editNote: (id, data) => http.put(`/courses/edit/${id}`, data)
 }
 
 // const getAll = () => {

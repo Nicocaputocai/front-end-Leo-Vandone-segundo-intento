@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Button, Form, Jumbotron, Row, Col } from "react-bootstrap";
+import { Button, Form, Jumbotron, Row, Col, Container} from "react-bootstrap";
+
 import AuthorDataService from "../services/AuthorService";
 
 const AddAuthor = () => {
@@ -8,8 +9,9 @@ const AddAuthor = () => {
         name: "",
         description: ""
       };
-    const [createAuthor, setCreateAuthor] = useState(initialFormAuthor)
+    const [createAuthor, setCreateAuthor] = useState(initialFormAuthor);
     const [submitted, setSubmitted] = useState();
+    const [previewSource, setPreviewSource] = useState('');
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setCreateAuthor({ ...createAuthor, [name]: value });
@@ -32,7 +34,13 @@ const AddAuthor = () => {
           description: createAuthor.description,
         };
         console.log(data);
-
+        const previewFile = (file) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onloadend = () => {
+              setPreviewSource(reader.result);
+          };
+      };
     AuthorDataService.create(createFormData(data))
       .then((response) => {
         setCreateAuthor({
@@ -52,6 +60,7 @@ const AddAuthor = () => {
     return(
   <>
   {submitted ? (
+    <Container>
         <Jumbotron>
           <h1>El autor se agregó correctamente</h1>
           <Row>
@@ -67,6 +76,7 @@ const AddAuthor = () => {
             </Col>
           </Row>
         </Jumbotron>
+        </Container>
       ) : (
   <Form.Group>
       <Form.Group controlId="img">

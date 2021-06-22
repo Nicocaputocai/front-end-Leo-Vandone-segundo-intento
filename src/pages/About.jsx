@@ -26,7 +26,7 @@ const About = () => {
         </Container>
       </Jumbotron>
       <Container>
-        <p className="py-5 text-center" style={{fontSize:"1.5em"}}>
+        <p className="py-5 text-center" style={{fontSize:"1.2em"}}>
           Intérprete de Lengua de Señas Argentina, creador de “El proceso de
           Entender y ser Entendido”, formación en Lengua de Señas Argentina y
           Sistema de Señas Internacional (SSI) para TCP y Personal Aeronáutico.

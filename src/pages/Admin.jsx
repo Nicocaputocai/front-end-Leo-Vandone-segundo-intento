@@ -4,6 +4,7 @@ import AddCourse from './AddCourse'
 import Create from './AddNote.jsx';
 import EditDeleteNotes from './EditDeleteNotes'
 import AddAuthor from './AddAuthor'
+import EditDeleteCourses from './EditDeleteCourses'
 
 const Admin = () =>{
 
@@ -47,7 +48,7 @@ const Admin = () =>{
             <AddCourse/>
         </Tab.Pane>
         <Tab.Pane eventKey="fourth">
-          
+          <EditDeleteCourses />
         </Tab.Pane>
         <Tab.Pane eventKey="fifth">
           <AddAuthor/>
