@@ -236,7 +236,7 @@ const Home = () => {
           {courses.map((course) => (
             course.important ? 
             <Card course = {course} className="cardborder-0 bg-light text-center" >
-              <Card.Img src={`/${course.img}`}    style={{ height: "200px" }} className="img-fluid" />
+              <Card.Img src={`http://api-leo.divisioncode.com.ar/img/${course.img}`} style={{ height: "200px" }} className="img-fluid" />
               <Card.Body>
                 <Card.Title>{course.name}</Card.Title>
                 <Card.Text>{truncate(course.description)}</Card.Text>

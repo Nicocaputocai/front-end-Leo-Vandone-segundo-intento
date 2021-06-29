@@ -33,6 +33,7 @@ const Admin = () =>{
         <Nav.Item>
           <Nav.Link eventKey='fifth'>Agregar autor/co-autor</Nav.Link>
         </Nav.Item>
+
       </Nav>
     </Col>
     <Col sm={9}>

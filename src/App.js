@@ -5,7 +5,7 @@ import About from './pages/About.jsx';
 import Admin from './pages/Admin';
 import Note from './pages/Note.jsx';
 import Contact from './pages/Contact';
-import Courses from './pages/Courses';
+import EditNote from './pages/EditNote';
 import Category from './pages/Category';
 import Course from './componets/Course.jsx';
 import Home from './pages/Home';
@@ -45,8 +45,16 @@ function App() {
             <About />
           </Route>
 
-          <Route path="/admin">
+          <Route path="/admin" exact>
             <Admin />
+          </Route> 
+
+          <Route path="/admin/editNote/:id">
+          <EditNote />
+          </Route>
+
+          <Route>
+            
           </Route>
           <Route path="/test">
             <Test />

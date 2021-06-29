@@ -11,7 +11,7 @@ const AddAuthor = () => {
       };
     const [createAuthor, setCreateAuthor] = useState(initialFormAuthor);
     const [submitted, setSubmitted] = useState();
-    const [previewSource, setPreviewSource] = useState('');
+
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setCreateAuthor({ ...createAuthor, [name]: value });
@@ -34,13 +34,6 @@ const AddAuthor = () => {
           description: createAuthor.description,
         };
         console.log(data);
-        const previewFile = (file) => {
-          const reader = new FileReader();
-          reader.readAsDataURL(file);
-          reader.onloadend = () => {
-              setPreviewSource(reader.result);
-          };
-      };
     AuthorDataService.create(createFormData(data))
       .then((response) => {
         setCreateAuthor({

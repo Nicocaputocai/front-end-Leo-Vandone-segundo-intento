@@ -36,7 +36,7 @@ const Course = () => {
         <>
 <Container>
         <Row>
-            <Image src={`../${course.img}`} alt="" />
+            <Image src={`http://api-leo.divisioncode.com.ar/img/${course.img}` } alt="" style={{ height: "600px", width: "1500px" }} />
         </Row>
         <Row>
           <Col>

@@ -44,10 +44,13 @@ const Blog = () => {
 
   return (
     <>
+        <br />
+        <br />
       <Container>
+
         <Row>
           <Image
-            src={`https://cabin-crew-api.herokuapp.com/img/${note.img}`}
+            src={`http://api-leo.divisioncode.com.ar/img/${note.img}`}
             style={{ height: "400px", width: "1500px" }}
           ></Image>
         </Row>
@@ -68,7 +71,7 @@ const Blog = () => {
               <Col lg="1">
                 <Image
                   className=" img-fluid rounded-circle"
-                  src={`https://cabin-crew-api.herokuapp.com/img/${author.img}`}
+                  src={`http://api-leo.divisioncode.com.ar/img/${author.img}`}
                   style={{ height: "80px", width: "150px" }}
                 ></Image>
               </Col>
@@ -90,7 +93,7 @@ const Blog = () => {
           <Col lg="1">
             <Image
               className=" img-fluid rounded-circle"
-              src={`https://cabin-crew-api.herokuapp.com/img/${author.img}`}
+              src={`http://api-leo.divisioncode.com.ar/img/${author.img}`}
               style={{ height: "80px", width: "150px" }}
             ></Image>
           </Col>

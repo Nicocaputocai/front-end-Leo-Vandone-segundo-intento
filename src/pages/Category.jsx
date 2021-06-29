@@ -45,16 +45,14 @@ const Category = () =>{
         }
     return (
       <>
-      <Container>
-      <h1>{category}</h1> <hr />
-      </Container>
-
+          <br />
+          <br />
           {notes.map((note) =>(
             note.category == category ? 
             <Container >
             <Row className='align-items-center'>
               <Col lg='6'>
-              <Image src={`https://cabin-crew-api.herokuapp.com/img/${note.img}`} style={{width:'500px', height:'300px'}}>
+              <Image src={`http://api-leo.divisioncode.com.ar/img/${note.img}`} style={{width:'500px', height:'300px'}}>
                 
               </Image>
               </Col>

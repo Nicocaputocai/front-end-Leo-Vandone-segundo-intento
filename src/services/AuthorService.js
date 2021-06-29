@@ -1,5 +1,6 @@
 import { create } from 'istanbul-reports'
 import http from '../http-common'
+import httpLocal from '../http-common-local'
 
 const AuthorDataService = {
     getAll:() => http.get('/authors'),
