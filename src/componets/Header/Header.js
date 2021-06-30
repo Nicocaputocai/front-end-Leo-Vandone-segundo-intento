@@ -49,9 +49,10 @@ const Header = () => {
           <Nav className="">
             <NavDropdown title="Formación" id="collasible-nav-dropdown">
               {courses.map((course) => (
+                course.archived == false ?
                 <NavDropdown.Item href={`/courses/${course._id}`}>
                   {course.name}
-                </NavDropdown.Item>
+                </NavDropdown.Item> : ""
               ))}
             </NavDropdown>
             <NavDropdown title="Notas" id="basic-nav-dropdown">

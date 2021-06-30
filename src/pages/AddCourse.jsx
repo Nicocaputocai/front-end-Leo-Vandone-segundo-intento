@@ -153,7 +153,7 @@ const AddCourse= () =>{
             />
           </Form.Group>
           <Button variant="primary" onClick={save}>
-            Publicar nota
+            Publicar curso
           </Button>
         </Form.Group>
       )}

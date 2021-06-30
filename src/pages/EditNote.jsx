@@ -14,7 +14,7 @@ import AuthorDataService from "../services/AuthorService";
 
 const EditNote = () => {
   const { id } = useParams();
-  console.log(id);
+  console.log("id: ", id);
 
   const initialFormNote = {
     img: "",
@@ -32,13 +32,17 @@ const EditNote = () => {
     Object.keys(data).forEach((key) => {
       formData.append(key, data[key]);
     });
+    for(var pair of formData.entries()) {
+      console.log(pair[0]+ ', '+ pair[1]);
+   }
     return formData;
   };
 
-  const [editNote, setEditNote] = useState([], initialFormNote);
+  const [editNote, setEditNote] = useState(initialFormNote);
   const [submitted, setSubmitted] = useState();
   const [authors, setAuthors] = useState([]);
 
+  useEffect(() => {
   const retrieveNote = () => {
     BlogDataService.getById(id)
       .then((response) => {
@@ -49,8 +53,6 @@ const EditNote = () => {
         console.log(error);
       });
   };
-
-  useEffect(() => {
     retrieveNote();
   }, []);
 
@@ -77,9 +79,9 @@ const EditNote = () => {
       archived: editNote.archived,
     };
 
-    console.log(data);
+    console.log({data});
 
-    BlogDataService.editNote(createFormData(id, data))
+    BlogDataService.editNote(id, createFormData(data))
       .then((response) => {
         setEditNote({
           id: response.data.id,

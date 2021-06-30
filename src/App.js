@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import EditNote from './pages/EditNote';
 import Category from './pages/Category';
 import Course from './componets/Course.jsx';
+import EditCourse from './pages/EditCourse'
 import Home from './pages/Home';
 import Test from './pages/Test';
 import Footer from './componets/Footer';
@@ -53,8 +54,8 @@ function App() {
           <EditNote />
           </Route>
 
-          <Route>
-            
+          <Route path="/admin/editCourse/:id">
+            <EditCourse />
           </Route>
           <Route path="/test">
             <Test />

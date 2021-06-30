@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
 import {
   Container,
   Row,
@@ -34,6 +33,12 @@ const EditDeleteNotes = () => {
     return str.length > 50 ? str.substring(0, 500) + "[...]" : str;
   };
   
+  const deleteNote = (id) =>{
+    BlogDataService.deleteNote(id)
+      .then(response =>{
+        setNotes(notes.filter(note => response.data.blog._id != note._id))
+      })
+    }
 
   return (
     <>
@@ -64,6 +69,7 @@ const EditDeleteNotes = () => {
               <Button
                 type="button"
                 className="btn btn-danger btn-lg"
+                onClick={ ()=> deleteNote(note._id)}
               >
                 Borrar
               </Button>

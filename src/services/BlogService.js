@@ -1,4 +1,4 @@
-import http from '../http-common.js'
+import http from '../http-common'
 
 const BlogDataService = {
     getAllNotes:() => http.get('/blog'),
