@@ -133,7 +133,7 @@ const EditNote = () => {
         <Container>
           <Row>
             <Image
-              src={`http://api-leo.divisioncode.com.ar/img/${editNote.img}`}
+              src={`http://api-leo.divisioncode.net.ar/img/${editNote.img}`}
               style={{ height: "400px", width: "1500px" }}
             ></Image>
           </Row>

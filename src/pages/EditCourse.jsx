@@ -114,7 +114,7 @@ const EditCourse = () => {
         <Container>
           <Row>
             <Image
-              src={`http://api-leo.divisioncode.com.ar/img/${editCourse.img}`}
+              src={`http://api-leo.divisioncode.net.ar/img/${editCourse.img}`}
               style={{ height: "400px", width: "1500px" }}
             ></Image>
           </Row>

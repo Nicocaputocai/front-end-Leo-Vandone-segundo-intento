@@ -46,7 +46,7 @@ const EditDeleteNotes = () => {
         <Container>
           <Row className="align-items-center">
             <Image
-              src={`https://api-leo.divisioncode.com.ar/img/${note.img}`}
+              src={`https://api-leo.divisioncode.net.ar/img/${note.img}`}
               style={{ height: "200px", width: "400px" }}
             ></Image>
             <Col lg="6">

@@ -36,7 +36,9 @@ const Course = () => {
         <>
 <Container>
         <Row>
-            <Image src={`http://api-leo.divisioncode.com.ar/img/${course.img}` } alt="" style={{ height: "600px", width: "1500px" }} />
+        {/* <Image src="/EL PROCESO DE ENTENDER Y SER ENTENDIDO 1.png" alt="" style={{ height: "600px", width: "1500px" }} /> */}
+        
+            <Image src={`http://api-leo.divisioncode.net.ar/img/${course.img}` } alt="" style={{ height: "600px", width: "1500px" }} />
         </Row>
         <Row>
           <Col>

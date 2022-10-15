@@ -52,9 +52,13 @@ const Category = () =>{
             <Container >
             <Row className='align-items-center'>
               <Col lg='6'>
-              <Image src={`http://api-leo.divisioncode.com.ar/img/${note.img}`} style={{width:'500px', height:'300px'}}>
-                
+              { <Image src={`http://api-leo.divisioncode.net.ar/img/${note.img}`} 
+              style={{width:'500px', height:'300px'}}>  
               </Image>
+              }
+              {/* <Image  src="/EL PROCESO DE ENTENDER Y SER ENTENDIDO 1.png" 
+              style={{width:'500px', height:'300px'}}>    
+                </Image> */}
               </Col>
               <Col lg='6'>
                 <h3> {note.title}</h3>

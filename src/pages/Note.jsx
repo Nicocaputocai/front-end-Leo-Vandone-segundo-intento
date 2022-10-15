@@ -50,9 +50,13 @@ const Blog = () => {
 
         <Row>
           <Image
-            src={`http://api-leo.divisioncode.com.ar/img/${note.img}`}
+            src={`http://api-leo.divisioncode.net.ar/img/${note.img}`}
             style={{ height: "400px", width: "1500px" }}
           ></Image>
+                    {/* <Image
+            src="/EL PROCESO DE ENTENDER Y SER ENTENDIDO 1.png"
+            style={{ height: "400px", width: "1500px" }}
+          ></Image> */}
         </Row>
         <Row>
           <h1>{note.title}</h1>
@@ -71,7 +75,7 @@ const Blog = () => {
               <Col lg="1">
                 <Image
                   className=" img-fluid rounded-circle"
-                  src={`http://api-leo.divisioncode.com.ar/img/${author.img}`}
+                  src={`http://api-leo.divisioncode.net.ar/img/${author.img}`}
                   style={{ height: "80px", width: "150px" }}
                 ></Image>
               </Col>
@@ -93,7 +97,7 @@ const Blog = () => {
           <Col lg="1">
             <Image
               className=" img-fluid rounded-circle"
-              src={`http://api-leo.divisioncode.com.ar/img/${author.img}`}
+              src={`http://api-leo.divisioncode.net.ar/img/${author.img}`}
               style={{ height: "80px", width: "150px" }}
             ></Image>
           </Col>

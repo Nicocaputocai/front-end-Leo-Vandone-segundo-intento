@@ -232,11 +232,14 @@ const Home = () => {
         </Container>
       </Jumbotron>
       <Container>
+        <h2 className="text-center">Nuestros cursos destacados</h2>
+        <br />
         <CardDeck>
           {courses.map((course) => (
             course.important ? 
             <Card course = {course} className="cardborder-0 bg-light text-center" >
-              <Card.Img src={`http://api-leo.divisioncode.com.ar/img/${course.img}`} style={{ height: "200px" }} className="img-fluid" />
+              {/* <Card.Img src="EL PROCESO DE ENTENDER Y SER ENTENDIDO 1.png" style={{ height: "200px" }} className="img-fluid" /> */}
+              <Card.Img src={`http://api-leo.divisioncode.net.ar/img/${course.img}`} style={{ height: "200px" }} className="img-fluid" />
               <Card.Body>
                 <Card.Title>{course.name}</Card.Title>
                 <Card.Text>{truncate(course.description)}</Card.Text>

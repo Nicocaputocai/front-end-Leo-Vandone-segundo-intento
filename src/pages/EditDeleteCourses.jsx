@@ -40,7 +40,7 @@ import {
                 <Container>
                     <Row className="align-items-center">
                         <Image
-                        src={`https://api-leo.divisioncode.com.ar/img/${course.img}`}
+                        src={`https://api-leo.divisioncode.net.ar/img/${course.img}`}
                         style={{ height: "200px", width: "400px" }}
                         >
                         </Image>
