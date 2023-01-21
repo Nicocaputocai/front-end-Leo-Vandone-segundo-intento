@@ -12,7 +12,7 @@
         </Row>
       </Container>
 
-      <Jumbotron fluid className="bg-dark">
+      <div fluid className="bg-dark">
         <Container>
           <h3 className="text-center text-white">
             Formación en LSA (Lengua de Señas Argentina) para TCP y Personal
@@ -21,7 +21,7 @@
             mismo brindando un verdadero servicio de accesibilidad.
           </h3>
         </Container>
-      </Jumbotron>
+      </div>
 
       <div className="text-center">
         <div className="container">

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './componets/Header';
 import './App.css';
 import About from './pages/About.jsx';
@@ -18,49 +18,38 @@ function App() {
     <BrowserRouter>
       <Header />
       <div className="main-container">
-        <Switch>
 
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/courses/:id">
-            <Course />
-          </Route>
-          <Route path="/courses" exact>
+        <Home />
+        <Routes>
+        
+          <Route path="/" exact element={Home} />
+
+          <Route path="/courses/:id" element={Course} />
+
+          {/* <Route path="/courses" exact>
             
-          </Route>
+          </Route> */}
 
-          <Route path="/blog/cat/:category">
-            <Category />
-          </Route>
+          <Route path="/blog/cat/:category" element={Category}/>
 
-          <Route path="/blog/:id">
-            <Note />
-          </Route>
 
-          <Route path="/contact" exact>
-            <Contact />
-          </Route>
+          <Route path="/blog/:id" element={Note}/>
 
-          <Route path="/about" exact>
-            <About />
-          </Route>
+          <Route path="/contact" exact element={Contact} />
 
-          <Route path="/admin" exact>
-            <Admin />
-          </Route> 
+          <Route path="/about" exact element={About}/>
 
-          <Route path="/admin/editNote/:id">
-          <EditNote />
-          </Route>
 
-          <Route path="/admin/editCourse/:id">
-            <EditCourse />
-          </Route>
-          <Route path="/test">
-            <Test />
-          </Route>
-        </Switch>
+          <Route path="/admin" exact element={Admin} />
+
+          <Route path="/admin/editNote/:id" element={EditNote} />
+
+
+          <Route path="/admin/editCourse/:id" element={EditNote} />
+
+          <Route path="/test" element={Test} />
+          
+        </Routes>
       </div>
       <Footer />
     </BrowserRouter>

@@ -52,7 +52,7 @@ const Blog = () => {
           <Image
             src={`http://api-leo.divisioncode.net.ar/img/${note.img}`}
             style={{ height: "400px", width: "1500px" }}
-          ></Image>
+          ></Image> 
                     {/* <Image
             src="/EL PROCESO DE ENTENDER Y SER ENTENDIDO 1.png"
             style={{ height: "400px", width: "1500px" }}

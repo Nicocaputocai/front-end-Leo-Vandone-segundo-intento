@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import CoursesDataService from '../services/CourseService.js';
 import {
-    Jumbotron,
     Container,
     CardGroup,
     Card,
@@ -49,13 +48,13 @@ const Course = () => {
         </Row>
       </Container>
 
-      <Jumbotron fluid className="bg-dark">
+      <div fluid className="bg-dark">
         <Container>
           <h3 className="text-center text-white">
             {course.introduction}
           </h3>
         </Container>
-      </Jumbotron>
+      </div>
 
       <div className="text-center">
         <div className="container">
